@@ -1,0 +1,60 @@
+using System;
+
+namespace MoneyMaker
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+           /*In this problem you have to read an integer number and calculate the smallest possible number of notes in which the value may be decomposed.
+            * The notes are of 100, 50, 20, 10, 5, 2 and 1.
+            * Input: The input will contain an integer number
+            * Output: Print the minimum quantity of necessary bank notes*/
+
+            //Greet the user
+            Console.WriteLine("Hello Welcome to the Denomination-izer!");
+
+            //Prompt the user to input a value in whole numbers, capture value
+            int userInput;
+            Console.WriteLine("Please input the value you wish to break down. Note: This has to be a whole number");
+            userInput = Convert.ToInt32(Console.ReadLine());
+
+            //Calulate denominations
+            Console.WriteLine("You want me to break down £" + userInput + " into the smallest number possible of bank notes, correct?");
+            int moneyRemainder;
+            int noteHundred;
+            int noteFifty;
+            int noteTwenty;
+            int noteTen;
+            int noteFive;
+            int coinTwo;
+            int coinOne;
+
+            noteHundred = userInput / 100;
+            moneyRemainder = userInput % 100;
+            noteFifty = moneyRemainder / 50;
+            moneyRemainder = moneyRemainder % 50;
+            noteTwenty = moneyRemainder / 20;
+            moneyRemainder = moneyRemainder % 20;
+            noteTen = moneyRemainder / 10;
+            moneyRemainder = moneyRemainder % 10;
+            noteFive = moneyRemainder / 5;
+            moneyRemainder = moneyRemainder % 5;
+            coinTwo = moneyRemainder / 2;
+            moneyRemainder = moneyRemainder % 2;
+            coinOne = moneyRemainder / 1;
+            moneyRemainder = moneyRemainder % 1;
+
+            //Display output
+            Console.WriteLine("");
+            Console.WriteLine("The results are as follows:");
+            Console.WriteLine("£100 notes = " + noteHundred + ",");
+            Console.WriteLine("£50 notes = " + noteFifty + ",");
+            Console.WriteLine("£20 notes = " + noteTwenty + ",");
+            Console.WriteLine("£10 notes = " + noteTen + ",");
+            Console.WriteLine("£5 notes = " + noteFive + ",");
+            Console.WriteLine("£2 coins = " + coinTwo + ",");
+            Console.WriteLine("£1 coins = " + coinOne + "."); 
+        }
+    }
+}
