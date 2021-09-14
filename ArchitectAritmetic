@@ -10,16 +10,73 @@ namespace ArchitectArithmetic
             //Console.WriteLine(RectangularArea(4, 5));
             //Console.WriteLine(CircularArea(4));
             //Console.WriteLine(TriangularArea(10, 9));
-            
-            double areaRectangle = RectangularArea(1500, 2500);
-            double areaCircle = CircularArea(275) / 2;
-            double areaTriangle = TriangularArea(750, 500);
-            double totalArea = areaRectangle + areaCircle + areaTriangle;
-            double totalCost = 180 * totalArea;
-            double totalCostRounded = Math.Round(totalCost, 2);
 
-            Console.WriteLine($"The total area of Teotihuacan's floor in Mexico is {totalArea} metres.");
-            Console.WriteLine($"In local currency this will cost {totalCostRounded} Pesos in total");
+            //Offer options to the user
+            Console.WriteLine("Welcome to Architect Arithmetic!");
+            Console.WriteLine("What major historical building would you like to calculate the cost of?");
+            Console.WriteLine("Pick from the following options:");
+            Console.WriteLine();
+            Console.WriteLine("1. Teotihuacan in Mexico City, Mexico.");
+            Console.WriteLine("2. Taj Mahal in Agra, India.");
+            Console.WriteLine("3. Great Mosque of Mecca in Mecca, Saudi Arabia.");
+
+            int userInput = Convert.ToInt32(Console.ReadLine());
+
+            switch (userInput)
+            {
+                case 1:
+                    {
+                        Console.WriteLine("You have chosen Teotihuacan!");
+                        double areaRectangle = RectangularArea(1500, 2500);
+                        double areaCircle = CircularArea(275) / 2;
+                        double areaTriangle = TriangularArea(750, 500);
+                        double totalArea = areaRectangle + areaCircle + areaTriangle;
+                        double totalCost = 180 * totalArea;
+                        double totalCostRounded = Math.Round(totalCost, 2);
+                        Console.WriteLine($"The total area of Teotihuacan's floor in Mexico is {totalArea} metres.");
+                        Console.WriteLine($"In local currency this will cost {totalCostRounded} Pesos in total");
+                        break;
+                    }
+
+                case 2:
+                    {
+                        Console.WriteLine("You have chosen Taj Mahal!");
+                        double areaSquare = RectangularArea(90.5, 90.5);
+                        double areaTriangle = TriangularArea(24, 24);
+                        double areaToRemove = areaTriangle * 4;
+                        double totalArea = areaSquare - areaToRemove;
+                        double totalCost = 180 * totalArea;
+                        double totalCostRounded = Math.Round(totalCost, 2);
+                        Console.WriteLine($"The total area of Taj Mahal's floor is {totalArea} metres.");
+                        Console.WriteLine($"This will cost a {totalCostRounded} Pesos in total.");
+                        break;
+                    }
+                case 3:
+                    {
+                        Console.WriteLine("You have chosen Great Mosque of Mecca");
+                        double areaRectangleOne = RectangularArea(180, 106);
+                        double areaRectangleTwo = RectangularArea(284, 264);
+                        double areaTriangle = TriangularArea(84, 264);
+                        double oddArea = areaRectangleTwo - areaTriangle;
+                        double totalArea = areaRectangleOne + oddArea;
+                        double totalCost = 180 * totalArea;
+                        double totalCostRounded = Math.Round(totalCost, 2);
+                        Console.WriteLine($"The total area of Great Mosque of Mecca's floor is {totalArea} metres.");
+                        Console.WriteLine($"This will cost a total of {totalCostRounded} Pesos in total.");
+                        break;
+                    }
+                default:
+                    {
+                        Console.WriteLine("That wasn't a valid input.");
+                        Console.WriteLine("Please choose an option.");
+                        break;
+                    }
+            }
+
+            Console.WriteLine("Thank you for using ArchitectArithmetic");
+            Console.WriteLine("Please press any key to terminate program.");
+            Console.ReadLine();
+
         }
 
         //Define methods
